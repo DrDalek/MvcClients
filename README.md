@@ -6,5 +6,5 @@
 
 **Configuration de base**
 
-Configurez vos informations de connexion à votre BD dans le fichier `appsetting.json`
+Configurez vos informations de connexion à la BD dans le fichier `appsetting.json`
 
