@@ -6,7 +6,8 @@ namespace MvcClients.Models
 {
 	public class Client
 	{
-		public int Id { get; set; }
+		[Key]
+		public int ClientId { get; set; }
 
 		[Display(Name="Civilité")]
 		public string Civilite  { get; set; }
@@ -45,7 +46,5 @@ namespace MvcClients.Models
 		[Required(ErrorMessage = "Le champ 'Ville' est requis")]
 		[Display(Name="Ville/Commune")]
 		public string Ville { get; set; }
-
-
 	}
 }

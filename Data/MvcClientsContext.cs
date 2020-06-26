@@ -6,8 +6,7 @@ namespace MvcClients.Data
     {
         public MvcClientsContext (DbContextOptions<MvcClientsContext> options)
             : base(options)
-        {
-        }
+        { }
 
         public DbSet<Models.Client> Client { get; set; }
     }

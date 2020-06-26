@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,12 @@ namespace MvcClients.Controllers
             return View(await _context.Client.ToListAsync());
         }   
 
+        public async Task<IActionResult> GetAll()
+		{
+            var list = await _context.Client.ToListAsync();
+            return Json(new { data = list });
+		}
+
         // GET: Clients/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -31,7 +38,7 @@ namespace MvcClients.Controllers
             }
 
             var client = await _context.Client
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.ClientId == id);
             if (client == null)
             {
                 return NotFound();
@@ -62,6 +69,31 @@ namespace MvcClients.Controllers
             return View(client);
         }
 
+        public async Task<IActionResult> Create5User()
+		{
+            Client client;
+            for(int i=0; i < 5; i++)
+			{
+                client = new Client();
+                client.Civilite = "Mr";
+                client.Nom = "New"+i;
+                client.Prenom = "Client"+i;
+                client.DateNaissance = new DateTime(2011, 6, 10);
+                client.CodePostale = 76600;
+                client.Adresse = "New Address" + i;
+                client.Pays = "Pays" + i;
+                client.Mail = "mail@gmail.com";
+                client.Telephone = "0612345678";
+                client.Ville = "New Ville" + i;
+
+                //Ajout dans la BDD
+                _context.Add(client);
+                //Commit et push les changements sur la BDD 
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction("Index");
+		}
+
         // GET: Clients/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -85,7 +117,7 @@ namespace MvcClients.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Civilite,Nom,Prenom,DateNaissance,CodePostale,Adresse,Pays,Mail,Telephone,Ville")] Client client)
         {
-            if (id != client.Id)
+            if (id != client.ClientId)
             {
                 return NotFound();
             }
@@ -99,7 +131,7 @@ namespace MvcClients.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ClientExists(client.Id))
+                    if (!ClientExists(client.ClientId))
                     {
                         return NotFound();
                     }
@@ -122,7 +154,7 @@ namespace MvcClients.Controllers
             }
 
             var client = await _context.Client
-                .FirstAsync(m => m.Id == id);
+                .FirstAsync(m => m.ClientId == id);
             if (client == null)
             {
                 return NotFound();
@@ -144,7 +176,7 @@ namespace MvcClients.Controllers
 
         private bool ClientExists(int id)
         {
-            return _context.Client.Any(e => e.Id == id);
+            return _context.Client.Any(e => e.ClientId == id);
         }
     }
 }

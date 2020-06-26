@@ -9,8 +9,8 @@ using MvcClients.Data;
 namespace MvcClients.Migrations
 {
     [DbContext(typeof(MvcClientsContext))]
-    [Migration("20200607150747_StringTelephone")]
-    partial class StringTelephone
+    [Migration("20200625205548_clientid")]
+    partial class clientid
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace MvcClients.Migrations
 
             modelBuilder.Entity("MvcClients.Models.Client", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ClientId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -41,18 +41,26 @@ namespace MvcClients.Migrations
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Nom")
+                        .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Pays")
+                        .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Prenom")
+                        .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Telephone")
+                        .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.HasKey("Id");
+                    b.Property<string>("Ville")
+                        .IsRequired()
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("ClientId");
 
                     b.ToTable("Client");
                 });
