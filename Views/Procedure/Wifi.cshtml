@@ -1,0 +1,117 @@
+﻿@{
+    ViewData["Title"] = "Connexion Wifi";
+}
+
+<ul style="list-style:none;">
+    <li>
+        <div>
+            <h3>Etape 1</h3>
+            <p>
+                Si la connexion internet se fait par Wifi,
+                il faut commencer par le brancher électriquement avec le transformateur fourni.
+            </p>
+        </div>
+    </li>
+    <li>
+        <h3>Etape 2</h3>
+        <p>
+            Une fois allumé, laissez le DumboPass s’initialiser.
+            Un message rouge devrait apparaître au bout de 30 secondes environ.
+            A partir de ce moment vous pouvez utiliser l’application Android fournie pour vous connecter au DumboPass.
+            Le DumboPass sera identifiable grâce à son numéro de série (étiqueté au dos du DumboPass).
+        </p>
+    </li>
+    <li>
+        <h3>Etape 3</h3>
+        <p>
+            Arrivée dans l’application Android : <br />
+            Cliquez sur connexion (pas besoin d’identifiant), puis sur la seconde page cliquez sur l’image de l’écran en haut.
+        </p>
+    </li>
+    <li>
+        <h3>Etape 4</h3>
+        <p>
+            Ensuite vous devrez arriver sur la page ci-dessous. <br />
+            Cliquez sur le bouton en bas à droite pour lancer la détection de votre DumboPass.
+            Une fois la recherche terminée, vous obtenez une ou plusieurs lignes avec un nom composé
+            d’un ou plusieurs mots ainsi que du numéro de série de votre DumboPass
+            (ce numéro de série et présent au dos du boîtier.
+        </p>
+    </li>
+    <li>
+        <h3>Etape5</h3>
+        <p>
+            Cliquez a présent sur la ligne contenant le numero de série (8 caractères alphanumériques) de votre boîtier,
+            une fenêtre va apparaître comme sur la capture ci-dessous.
+            Entrez le mot de passe associer (si c’est la première utilisiation ou que vous n’avez jamais modifier ce dernier est : SmartLight).
+            Si vous n’êtes pas sûr de votre saisie vous pouvez toujours appuyer sur l’œil à côté du champs texte
+            pour afficher le mot de passe tapé en clair.
+        </p>
+    </li>
+    <li>
+        <h3>Etape 6</h3>
+        <ul style="list-style:none;">
+            <li>
+                <h5>Etape6_1</h5>
+                <p>
+                    Une fois le mot de passe saisie, votre appareil sera enregistré dans l’onglet « Mes écrans » comme suit.
+                    <img href="" alt="AndMesEcrans" />
+                </p>
+            </li>
+            <li>
+                <h5>Etape6_2</h5>
+                <p>
+                    Il vous suffira de cliquez sur le nom de votre appareil pour accéder aux paramètres de modification de ce dernier.
+                    Vous arriverez alors sur cette page :
+                    <img href="" alt="AndParams" />
+                </p>
+            </li>
+        </ul>
+
+    </li>
+    <li>
+        <h3>Etape 7</h3>
+        <ul style="list-style:none;">
+            <li>
+                <h5>Etape7_1</h5>
+                <p>
+                    Cliquez sur les points de suspensions en haut à droite de l’écran
+                    pour afficher un menu et sélectionnez Paramètres Réseaux
+                    pour arriver sur la fenêtre suivante, puis sélectionnez
+                    Scan réseau pour accéder à la page de droite.
+                    <img href="" alt="listParmas" />
+                    <img href="" alt="ScanReseau" />
+                    Une fois sur la page de droite appuyez sur le bouton rose en bas à gauche pour effectuer
+                    une recherche des réseaux wifi disponible, chercher votre point d’accès wifi
+                    parmi les choix disponible dans la liste (il est possible que le nombre de résultat
+                    fasse dépasser la liste de résultat de votre écran dans ce cas veuillez faire défiler cette dernière).
+                    Une fois votre point d’accès détecté, appuyez dessus.
+                </p>
+            </li>
+            <li>
+                <h5>Etape7_2</h5>
+                <p>
+                    Le mot de passe de votre point d’accès va vous être demander,
+                    renseignez-le (il vous est possible de vérifier votre saisie en appuyant sur l’œil présent sur la droite du champ d’entré).
+                    Une votre saisie correcte vous pouvez valider.
+                    <img href="" alt="AndParams" />
+                </p>
+            </li>
+            <li>
+                <h5>Etape7_3</h5>
+                <p>
+                    <img href="" alt="validate" />
+                    Vous arriverez par la suite sur cette fenêtre. Laissez le rôle sur maître, ensuite indiquez si votre accès est en DHCP
+                    (ne nécessite pas votre intervention pour l’allocation d’adresse IP) ou en statique.
+                    Si vous êtes en DHCP laissez la configuration inchangée, puis appuyez sur le triangle comme indiqué ci-dessus et cliquez sur le bouton sauvegarder en bas de l’écran.
+                    Sinon, veuillez renseigner les champs puis appuyez sur le triangle comme indiqué ci-dessus et cliquez sur le bouton sauvegarder en bas de l’écran.
+                </p>
+            </li>
+        </ul>
+
+    </li>
+</ul>
+
+<div>
+    <a asp-action="Index">Retour</a>
+</div>

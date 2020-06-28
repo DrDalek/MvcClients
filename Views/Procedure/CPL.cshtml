@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "Connexion CPL";
+}
+
+<ul style="list-style:none;">
+    <li>
+        <div>
+            <h3>Etape 1</h3>
+            <p>
+                Une fois l'écran câblé et configuré, il faut relier le DumboPass à la MCTRL via le câble HDMI-DVI fourni,
+                ainsi qu'avec le câble USB avec lequel la MCTRL a été configurée.
+            </p>
+        </div>
+    </li>
+    <li>
+        <h3>Etape 2</h3>
+        <p>
+            Il faut mettre le DumboPass en réseau. <br />
+            Pour se faire, il faut mettre les boîtier CPL (brancher électriquement en direct sur une arrivé murale)
+            en réseau via des câbles RJ45, un relié directement au modem ou routeur du client, l’autre relié au DumboPass,
+            puis appareillez les deux boîtier CPL en appuyant sur le bouton pair de chaque boîtier
+            (vous devez appuyer sur les deux boutons dans un intervalle de deux minutes au maximum).
+            Ensuite, vous pouvez brancher électriquement le DumboPass avec le transformateur fourni.
+        </p>
+    </li>
+    <li>
+        <h3>Etape 3</h3>
+        <p>
+            Une fois l’écran et le DumboPass alimentés et allumés le DumboPass affichera à l’écran sa version.
+            Il va interroger notre API pour vérifier que sa clé est légitime et acceptée par nous.
+            Si un message rouge s’affiche à l’écran cela signifie que la clé n’est pas acceptée
+            ou bien que le DumboPass n’arrive pas à remonter sur le réseau, sinon passez à l’Etape 5 directement.
+        </p>
+    </li>
+    <li>
+        <h3>Etape 4</h3>
+        <p>
+            Dans un premier il faut appeler SmartLight pour demander confirmation de la validation de la clé. <br />
+            Si elle ne l’était pas encore, redémarrer le DumboPass. <br />
+            Si elle l’était déjà, le problème se situe au niveau du réseau interne.
+            Vérifier l’accès réseau à l’aide d’un ordinateur portable
+            en désactivant le Wifi de ce dernier et en branchant le câble RJ45 du DumboPass dessus.
+        </p>
+    </li>
+    <li>
+        <h3>Etape5</h3>
+        <ul style="list-style:none;">
+            <li>
+                <h5>Etape5_1</h5>
+                <p>
+                    Vérifiez que vous avez bien un accès au réseau : <br />
+                    - si vous voyez ce logo en bas à droite de votre barre de tâche vous avez un accès réseau vous pouvez poursuivre la procédure. <br />
+                    - si vous voyez ce logo en bas à droite de votre barre de tâche c’est que vous n’avez pas d’accès réseau et donc que la prise ethernet
+                    sur laquelle vous êtes branché n’est pas relier à un routeur ou à une boxe il faut informer le client
+                    pour qu’il fasse le nécessaire ou utilisé les prises CPL.
+                </p>
+            </li>
+            <li>
+                <h5>Etape5_2</h5>
+                <p>
+                    Ensuite, vérifier que vous êtes autorisé à utiliser ce réseau. <br />
+                    Pour ce faire, aller dans le menu démarrer de l’ordinateur (sous Windows), dans la barre de recherche taper cmd et lancez ce dernier
+                </p>
+            </li>
+            <li>
+                <h5>Etape5_3</h5>
+                <p>
+                    Une fois ouvert tapez la commande ipconfig<br />
+                    Si vous voyez les champs Adresse IPv4 et Passerelle Par défaut rempli comme ci-dessus tester la connexion internet en accédant à google par exemple. <br />
+                    Si en face de ces champs après les « : » il n’y a rien c’est que le réseau est en statique
+                    il faut donc faire une demande d’adresse IP à la personne qui gère le réseau et ensuite utiliser l’application Android fournie pour configurer l’adresse statique du DumboPass.
+                    Une fois l’adresse envoyée au DumboPass, veuillez le redémarrer et attendez qu’il s’initialise.
+                </p>
+
+            </li>
+        </ul>
+    </li>
+    <li>
+        <h3>Etape 6</h3>
+        <p>
+            À cette étape, le DumboPass devrait afficher un écran noir, ou lire un contenu s’il en possède.
+            Le client n’a plus qu’à envoyer le contenu qu’il désire sur le DumboPass via l’application.
+            Si ce n’est pas le cas et que le message rouge persiste, contacter SmartLight,
+            il s’agit certainement d’une configuration réseau très particulière.
+        </p>
+    </li>
+</ul>
+
+<div>
+    <a asp-action="Index">Retour</a>
+</div>

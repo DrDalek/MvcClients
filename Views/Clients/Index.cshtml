@@ -15,7 +15,7 @@
 
 <h1>Mes clients</h1>
 
-<table class="table" id="tblData">
+<table class="table table-striped" id="tblData">
     <thead>
         <tr>
             <th>
@@ -63,6 +63,8 @@
     <a asp-action="Create5User">Ajouter 5 clients </a>
 </p>
 
+<a asp-controller="Procedure" asp-action="Index">Procédures</a>
+
 @*@section Scripts{
         <script src="~/js/clients.js"></script>
     }*@
@@ -70,7 +72,7 @@
 @section Scripts{
     <script>
             $(document).ready(function () {
-                $('#myTable').DataTable();
+                $('#tblData').DataTable();
             });
     </script>
 }
